@@ -12,7 +12,7 @@ class InfoApi(object):
 
     def get_indicator_by_value(self, indicator):
         api_response = requests.get(
-            url = urllib.parse.urljoin(self.url, f"/api/info.php?indicator={indicator}&key={self.api_key}"),
+            url = urllib.parse.urljoin(self.url, f"/api/info.php?indicator={urllib.parse.quote(indicator)}&key={self.api_key}"),
         )
 
         api_response.raise_for_status()
