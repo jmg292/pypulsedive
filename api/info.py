@@ -17,7 +17,8 @@ class InfoApi(object):
                 f"/api/info.php?indicator={urllib.parse.quote(indicator)}&key={self._config.api_key}"),
         )
 
-        api_response.raise_for_status()
+        #api_response.raise_for_status()
         response_json = api_response.json()
-        indicator = Indicator.from_dictionary(response_json)
-        return indicator
+        return response_json
+        #indicator = Indicator.from_dictionary(response_json)
+        #return indicator
